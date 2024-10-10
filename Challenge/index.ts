@@ -49,9 +49,7 @@ const headers = new Headers({
 const client = createWalletClient({
   account: privateKeyToAccount(`0x${PRIVATE_KEY}` as `0x${string}`),
   chain: scroll,
-  transport: http(
-    "https://scroll-mainnet.g.alchemy.com/v2/tOQldBNWExMlh2GVUSV-kwnAxNYRzrr6"
-  ),
+  transport: http(ALCHEMY_HTTP_TRANSPORT_URL),
 }).extend(publicActions); // extend wallet client with publicActions for public client
 
 const [address] = await client.getAddresses();
